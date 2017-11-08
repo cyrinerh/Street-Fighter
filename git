@@ -1,0 +1,93 @@
+[33mcommit 4b39c861e715ab642561de41341c0ce294a5f015[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: cyrine <cyrine.rihane@gmail.com>
+Date:   Thu Nov 2 17:47:07 2017 +0100
+
+    initial commit
+
+[1mdiff --git a/images/hadouken.gif b/images/hadouken.gif[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a1e8b35[m
+Binary files /dev/null and b/images/hadouken.gif differ
+[1mdiff --git a/images/ryu_animated.gif b/images/ryu_animated.gif[m
+[1mnew file mode 100644[m
+[1mindex 0000000..12da671[m
+Binary files /dev/null and b/images/ryu_animated.gif differ
+[1mdiff --git a/images/ryu_hadoken_pose.png b/images/ryu_hadoken_pose.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..89b6a5d[m
+Binary files /dev/null and b/images/ryu_hadoken_pose.png differ
+[1mdiff --git a/images/ryu_stand_still.png b/images/ryu_stand_still.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c947c1a[m
+Binary files /dev/null and b/images/ryu_stand_still.png differ
+[1mdiff --git a/index.html b/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d8793c3[m
+[1m--- /dev/null[m
+[1m+++ b/index.html[m
+[36m@@ -0,0 +1,64 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m	[32m<meta charset="UTF-8">[m
+[32m+[m	[32m<title>Hadouken demo</title>[m
+[32m+[m	[32m<style>[m
+[32m+[m	[32mbody {[m
+[32m+[m		[32mwidth: 750px;[m
+[32m+[m		[32mmargin: 0 auto;[m
+[32m+[m	[32m}[m
+[32m+[m	[32m.main {[m
+[32m+[m		[32mposition: relative;[m
+[32m+[m	[32m}[m
+[32m+[m	[32m.hadouken {[m
+[32m+[m		[32mposition: absolute;[m
+[32m+[m		[32mtop: 28%;[m
+[32m+[m		[32mleft: 45%;[m
+[32m+[m	[32m}[m
+[32m+[m[32m</style>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m	[32m<div class="main"></div>[m[41m	[m
+[32m+[m
+[32m+[m
+[32m+[m	[32m<script[m
+[32m+[m	[32msrc="https://code.jquery.com/jquery-3.2.1.min.js"[m
+[32m+[m	[32mintegrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="[m
+[32m+[m	[32mcrossorigin="anonymous"></script>[m
+[32m+[m	[32m<script>[m
+[32m+[m		[32m// insert '<img src="images/ryu_stand_still.png">' into the .main div[m
+[32m+[m		[32m$('.main').append('<img src="images/ryu_stand_still.png">')[m
+[32m+[m[41m		[m
+[32m+[m		[32m// animate ryu when hovered over[m
+[32m+[m		[32m// Hint: think of using mouseover and mouseout events[m
+[32m+[m		[32m$('.main img').mouseover(function (){[m
+[32m+[m			[32mthis.src = 'images/ryu_animated.gif'[m
+[32m+[m		[32m});[m
+[32m+[m		[32m$('.main img').mouseout(function (){[m
+[32m+[m			[32mthis.src = 'images/ryu_stand_still.png'[m
+[32m+[m		[32m});[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m		[32m// When you click on ryu, he should do a "hadouken"[m
+[32m+[m		[32m// Hint: think of using mousedown and mouseup and animate(to animate the hadouken gif).[m
+[32m+[m		[32m$('.main img').mousedown(function (even){[m
+[32m+[m[41m			[m
+[32m+[m			[32mthis.src = 'images/ryu_hadoken_pose.png'[m
+[32m+[m			[32m$('.main').append('<img src="images/hadouken.gif" class="hadouken">')[m
+[32m+[m			[32m$('.hadouken').animate({[m
+[32m+[m									[32mmarginLeft: "470"[m
+[32m+[m								[32m   },[m
+[32m+[m								[32m   1500,[m
+[32m+[m								[32m  'swing',[m
+[32m+[m								[32m  function(){this.remove()})[m
+[32m+[m		[32m    });[m
+[32m+[m		[32m$('.main img ').mouseup(function(event) {[m
+[32m+[m			[32mthis.src ='images/ryu_animated.gif'[m
+[32m+[m
+[32m+[m		[32m})[m
+[32m+[m[41m		[m
+[32m+[m[41m		[m
+[32m+[m	[32m</script>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
